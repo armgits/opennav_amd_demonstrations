@@ -19,7 +19,7 @@
   <xacro:include filename="$(find clearpath_platform_description)/urdf/j100/attachments/top_plate.urdf.xacro"/>
 
   <!-- Clearpath base platform -->
-  <xacro:j100 wheel="default"/>
+  <xacro:j100 control="diff_4wd" front_wheels="outdoor" rear_wheels="outdoor"/>
   <xacro:fender name="front_fender" model="default" parent_link="base_link">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
   </xacro:fender>
