@@ -168,7 +168,7 @@ def generate_launch_description():
         executable='static_transform_publisher',
         package='tf2_ros',
         output='screen',
-        arguments=['--frame-id', 'camera_0_link', '--child-frame-id', 'camera_link'],
+        arguments=['--frame-id', 'camera_0_link', '--child-frame-id', 'orbbec_camera_link'],
     )
 
     def get_params(context, args):
