@@ -78,6 +78,7 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         output='screen',
+        arguments=['-d', os.path.join(desc_dir, 'rviz', 'config.rviz')],
         parameters=[{'use_sim_time': True}])
 
     # The SDF file for the world is a xacro file because we wanted to
