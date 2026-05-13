@@ -88,7 +88,7 @@
         <update_rate>${hz}</update_rate>
         <visualize>false</visualize>
         <always_on>true</always_on>
-        <ignition_frame_id>${name}</ignition_frame_id>  <!-- Steve mod: fix frame to something actually in URDF -->
+        <gz_frame_id>${name}</gz_frame_id>  <!-- Steve mod: fix frame to something actually in URDF -->
         <topic>sensors/lidar_0</topic>  <!-- Steve mod: set topic to same as hardware -->
         <lidar>
           <scan>
