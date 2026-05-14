@@ -43,7 +43,7 @@ class RecordRosbagData(Node):
         self.exec = [
             'ros2', 'bag', 'record',
             '/tf', '/tf_static', '/robot_description', '/platform/odom', '/platform/odom/filtered',
-            '/platform/joint_states', '/platform/cmd_vel_unstamped', '/platform/bms/state',
+            '/platform/joint_states', '/platform/cmd_vel', '/platform/bms/state',
             '/joy_teleop/joy', '/cmd_vel', '/joy_teleop/cmd_vel', '/joy_teleop/emergency_stop',
             '/sensors/lidar_0/scan', '/sensors/lidar_0/points', '/sensors/imu_1/data',
             '/sensors/gps_0/fix', '/sensors/camera_0/points', '/sensors/camera_0/color/image',

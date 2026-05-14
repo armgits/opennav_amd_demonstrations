@@ -43,7 +43,7 @@ class PowerOffBackPack(Node):
             self.poweroff_count += 1
             if self.poweroff_count >= 20:  # Hold down for 2-3s
                 print('Power off event detected. Shutting down backpack.')
-                os.system('poweroff')
+                os.system('sudo poweroff')
         else:
             self.poweroff_count = 0
 
