@@ -11,10 +11,10 @@ Using `nav2.launch.py`, these can be enabled by setting the launch configuration
 For example:
 
 ```
-ros2 launch nav2.launch.py localization_type:=2D slam:=True
-ros2 launch nav2.launch.py localization_type:=GPS
-ros2 launch nav2.launch.py localization_type:=3D slam:=False map:=/path/to/map
-ros2 launch nav2.launch.py local_nav:=True
+ros2 launch honeybee_nav2 nav2.launch.py localization_type:=2D slam:=True
+ros2 launch honeybee_nav2 nav2.launch.py localization_type:=GPS
+ros2 launch honeybee_nav2 nav2.launch.py localization_type:=3D slam:=False map:=/path/to/map
+ros2 launch honeybee_nav2 nav2.launch.py local_nav:=True
 ```
 
 This also contains custom behavior trees developed for the demonstrations in `behavior_trees`.
