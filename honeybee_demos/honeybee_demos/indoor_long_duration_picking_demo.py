@@ -20,7 +20,7 @@ from action_msgs.msg import GoalStatus
 from geometry_msgs.msg import PoseStamped, Quaternion
 from nav2_simple_commander.robot_navigator import BasicNavigator
 import numpy as np
-from opennav_docking_msgs.action import DockRobot, UndockRobot  # nav_msgs in Iron and newer
+from nav2_msgs.action import DockRobot, UndockRobot
 import rclpy
 from rclpy.action import ActionClient
 from rclpy.duration import Duration

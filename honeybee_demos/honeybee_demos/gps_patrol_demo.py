@@ -162,7 +162,7 @@ class GPSPatrolDemo(Node):
                 wps = self._wpsToGeoPoses(inspection_targets_gps)
                 if self.looped_once:
                     wps.pop(0)
-                self.navigator.followGPSWaypoints(wps)
+                self.navigator.followGpsWaypoints(wps)
             else:
                 wps = self._wpsToPoses(inspection_targets_cartesian)
                 if self.looped_once:
