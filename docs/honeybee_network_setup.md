@@ -54,7 +54,7 @@ SSH into the robot over wireless or wired networks. Then enter the backpack comp
 sudo nmcli device wifi connect MyWifiNetwork password MyPassword
 ```
 
-6. Add the IP of the robot computers to your `/etc/host` so you can SSH into it in the future without `.local`
+6. Add the IP of the robot computers to your `/etc/hosts` so you can SSH into it in the future without `.local`
 
 ```
 127.0.0.1       localhost
