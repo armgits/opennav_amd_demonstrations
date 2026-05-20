@@ -98,7 +98,7 @@ rosdep install -r -y --from-paths src --ignore-src
 Now, we can build using colcon:
 
 ```
-colcon build
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --parallel-workers 2
 ```
 
 ## Details on Robot
