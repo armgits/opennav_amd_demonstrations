@@ -104,8 +104,8 @@ colcon build
 ## Details on Robot
 
 The robot has an internal network on the 192.168.131.* range.
-- The robot's builtin PC is `192.168.131.1` with username `administrator` & password `clearpath` (`cpr-j100-0842` and `cpr-j100-0849`)
-- The AMD backpack PC is `192.168.131.10` with username `administrator` & password `clearpath` (`hex` and `stinger`)
+- The robot's builtin PC is `192.168.131.1` with username `administrator` on Humble and `robot` on Jazzy & password `clearpath` (`cpr-j100-0842` and `cpr-j100-0849`)
+- The AMD backpack PC is `192.168.131.10` with username `administrator` & password `clearpath` on Humble and `opennav` on Jazzy (`hex`/`hexy` and `stinger`)
 - The ouster lidar is `192.168.131.20` 
 
 The Lidar is connected to the builtin PC due to limitations on the number of ethernet ports on the AMD computer (but could be easily remedied by an ethernet switch).
