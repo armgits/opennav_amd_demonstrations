@@ -41,6 +41,17 @@ It is important that your robot computer is ready to go automatically and not wa
 
 It is necessary to setup your networking to access the computer remotely once installed into the robot platform and interact with sensors.
 
+First, set these up to work better with large topics in ROS 2 in `/etc/sysctl.d/10-cyclonedds.conf`
+
+```
+net.core.rmem_max=2147483647
+net.core.wmem_max=2147483647
+net.ipv4.ipfrag_time=3
+net.ipv4.ipfrag_high_thresh=134217728
+```
+
+Then apply with `sudo sysctl --system`.
+
 ## WiFi
 
 We won't belabor this point.
