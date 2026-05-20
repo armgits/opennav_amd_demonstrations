@@ -52,6 +52,35 @@ net.ipv4.ipfrag_high_thresh=134217728
 
 Then apply with `sudo sysctl --system`.
 
+If using Cyclone DDS, for large topics I recommend the following configuration. There is probably an eq. for Fast DDS. Create a file `cyclonedds.xml` and include the following:
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+  <Domain Id="any">
+    <General>
+      <Interfaces>
+        <NetworkInterface autodetermine="true" priority="default" multicast="default" />
+      </Interfaces>
+      <AllowMulticast>default</AllowMulticast>
+      <MaxMessageSize>65500B</MaxMessageSize>
+    </General>
+    <Internal>
+      <SocketReceiveBufferSize min="10MB"/>
+      <Watermarks>
+        <WhcHigh>500kB</WhcHigh>
+      </Watermarks>
+    </Internal>
+  </Domain>
+</CycloneDDS>
+```
+
+Then export this in your `~/.bashrc` file:
+
+```
+export CYCLONEDDS_URI=file:///absolute/path/to/the/configuration/file
+```
+
 ## WiFi
 
 We won't belabor this point.
