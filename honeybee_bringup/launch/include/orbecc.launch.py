@@ -158,7 +158,7 @@ def generate_launch_description():
         DeclareLaunchArgument('enable_3d_reconstruction_mode', default_value='false'),
         DeclareLaunchArgument('enable_sync_host_time', default_value='true'),
         DeclareLaunchArgument('time_domain', default_value='device'),
-        DeclareLaunchArgument('enable_color_undistortion', default_value='false'),
+        DeclareLaunchArgument('enable_color_undistortion', default_value='true'),
         DeclareLaunchArgument('config_file_path', default_value=''),
         DeclareLaunchArgument('enable_heartbeat', default_value='false'),
     ]
@@ -189,13 +189,17 @@ def generate_launch_description():
                         name='camera_0',
                         namespace='sensors/camera_0',
                         parameters=params,
-                        remappings=[
-                            # Color
-                            ('color/image_raw', '/sensors/camera_0/color/image'),
-                            ('color/image_raw/compressed', '/sensors/camera_0/color/compressed'),
-                            ('color/image_raw/compressedDepth',
-                                '/sensors/camera_0/color/compressedDepth'),
-                            ('color/image_raw/theora', '/sensors/camera_0/color/theora'),
+                        remappings=[    
+                            # Color image raw
+                            ('color/camera_info', '/sensors/camera_0/color/camera_info_raw'),
+                            # Color image rectified
+                            ('/sensors/camera_0/color/camera_info_undistorted', '/sensors/camera_0/color/camera_info'),
+                            ('color/image_undistorted', '/sensors/camera_0/color/image'),
+                            ('color/image_undistorted/compressed', '/sensors/camera_0/color/image/compressed'),
+                            ('color/image_undistorted/compressedDepth', '/sensors/camera_0/color/image/compressedDepth'),
+                            ('color/image_undistorted/ffmpeg', '/sensors/camera_0/color/image/ffmpeg'),
+                            ('color/image_undistorted/theora', '/sensors/camera_0/color/image/theora'),
+                            ('color/image_undistorted/zstd', '/sensors/camera_0/color/image/zstd'),
                             # Depth
                             ('depth/image_raw', '/sensors/camera_0/depth/image'),
                             ('depth/image_raw/compressed', '/sensors/camera_0/depth/compressed'),
