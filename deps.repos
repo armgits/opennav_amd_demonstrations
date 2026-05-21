@@ -7,7 +7,7 @@ repositories:
   orbbec/OrbbecSDK_ROS2:
     type: git
     url: https://github.com/orbbec/OrbbecSDK_ROS2
-    version: v2.8.6 # 44e6398d996b930dbbb7824a9778935e04ca37b0
+    version: v2-main # edb0ee91a6f1dc501f0e7cbd94cfb9506dd2d807
 
   # For GPS demo
   SteveMacenski/nonpersistent_voxel_layer:
