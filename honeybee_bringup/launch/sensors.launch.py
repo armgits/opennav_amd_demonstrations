@@ -49,6 +49,13 @@ def generate_launch_description():
                     bringup_dir, 'launch', 'include', 'orbecc.launch.py'])]),
             condition=IfCondition(PythonExpression(["'", use_orbecc, "' == 'true'"]))
         ),
+
+        # Image/depth processing pipeline
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([
+                PathJoinSubstitution([
+                    bringup_dir, 'launch', 'include', 'depth_pointcloud_proc.launch.py'])]),
+        ),
     ])
 
     launch_imu = IncludeLaunchDescription(
