@@ -228,7 +228,7 @@ global_costmap:
       footprint_padding: 0.1
       resolution: 0.05
       track_unknown_space: true
-      plugins: ["static_layer", "voxel_layer", "inflation_layer"]
+      plugins: ["semantic_segmentation_layer", "inflation_layer"]
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
@@ -281,15 +281,15 @@ global_costmap:
           observation_persistence: 0.0
           expected_update_rate: 0.0
           visualize_tile_map: True
-          use_cost_selection: False  # If true, select observation per tile using highest max_cost in case multile observations fall in a single tile on one image. If false, use highest confidence
+          use_cost_selection: True  # If true, select observation per tile using highest max_cost in case multile observations fall in a single tile on one image. If false, use highest confidence
           max_obstacle_distance: 5.0
           min_obstacle_distance: 0.3
-          tile_map_decay_time: 5.0
-          class_types: ["traversable", "danger", "danger6", "danger7"]
+          tile_map_decay_time: 10.0
+          class_types: ["traversable", "danger"]
           traversable:
             classes: ["floor"]
-            base_cost: 0              # Cost when a single observation is received
-            max_cost: 0               # Cost when samples_to_max_cost observations with mark_confidence are accumulated
+            base_cost: 15              # Cost when a single observation is received
+            max_cost: 30               # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
             samples_to_max_cost: 0    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
