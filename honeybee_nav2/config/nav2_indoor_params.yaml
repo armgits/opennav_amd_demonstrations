@@ -198,8 +198,8 @@ local_costmap:
           class_types: ["traversable", "danger"]
           traversable:
             classes: ["floor"]
-            base_cost: 0              # Cost when a single observation is received
-            max_cost: 0               # Cost when samples_to_max_cost observations with mark_confidence are accumulated
+            base_cost: 15              # Cost when a single observation is received
+            max_cost: 30               # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
             samples_to_max_cost: 0    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
