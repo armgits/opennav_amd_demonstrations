@@ -184,7 +184,7 @@ local_costmap:
         enabled: True
         observation_sources: camera
         camera:
-          segmentation_topic: "/sam3_inference/label_mask"
+          segmentation_topic: "/sam3_inference_post/label_mask_resized"
           # confidence_topic: "/sam3_inference/label_mask"
           labels_topic: "/sam3_inference/label_info"
           pointcloud_topic: "/sensors/camera_0/points"
@@ -274,7 +274,7 @@ global_costmap:
         enabled: True
         observation_sources: camera
         camera:
-          segmentation_topic: "/sam3_inference_post/label_mask"  
+          segmentation_topic: "/sam3_inference_post/label_mask_resized"
           # confidence_topic: "/sam3_inference/label_mask"
           labels_topic: "/sam3_inference/label_info"
           pointcloud_topic: "/sensors/camera_0/points"
