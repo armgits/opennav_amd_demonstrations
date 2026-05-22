@@ -51,7 +51,7 @@ def generate_launch_description():
         DeclareLaunchArgument('usb_port', default_value=''),
         DeclareLaunchArgument('device_num', default_value='1'),
         DeclareLaunchArgument('point_cloud_qos', default_value='default'),  # SENSOR_DATA
-        DeclareLaunchArgument('enable_point_cloud', default_value='False'),
+        DeclareLaunchArgument('enable_point_cloud', default_value='True'),
         DeclareLaunchArgument('enable_colored_point_cloud', default_value='false'),
         DeclareLaunchArgument('connection_delay', default_value='10'),
         DeclareLaunchArgument('color_width', default_value='1280'),
@@ -119,10 +119,11 @@ def generate_launch_description():
         DeclareLaunchArgument('frames_per_trigger', default_value='2'),
         DeclareLaunchArgument('software_trigger_period', default_value='33'),  # ms
         DeclareLaunchArgument('enable_frame_sync', default_value='true'),
-        DeclareLaunchArgument('ordered_pc', default_value='false'),
+        DeclareLaunchArgument('ordered_pc', default_value='true'),
         DeclareLaunchArgument('use_hardware_time', default_value='false'),
         DeclareLaunchArgument('enable_depth_scale', default_value='true'),
-        DeclareLaunchArgument('enable_decimation_filter', default_value='False'),
+        DeclareLaunchArgument('enable_decimation_filter', default_value='True'),
+        DeclareLaunchArgument('pointcloud_decimation_filter_factor', default_value='4'),
         DeclareLaunchArgument('enable_hdr_merge', default_value='false'),
         DeclareLaunchArgument('enable_sequence_id_filter', default_value='false'),
         DeclareLaunchArgument('enable_threshold_filter', default_value='false'),
