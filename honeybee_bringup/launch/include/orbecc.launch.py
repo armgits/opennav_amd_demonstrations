@@ -175,6 +175,28 @@ def generate_launch_description():
     def get_params(context, args):
         return [load_parameters(context, args)]
 
+    remappings = [
+        # Color image raw
+        ('color/camera_info', '/sensors/camera_0/color/camera_info_raw'),
+        # Color image rectified
+        ('/sensors/camera_0/color/camera_info_undistorted', '/sensors/camera_0/color/camera_info'),
+        ('color/image_undistorted', '/sensors/camera_0/color/image'),
+        ('color/image_undistorted/compressed', '/sensors/camera_0/color/image/compressed'),
+        ('color/image_undistorted/compressedDepth',
+            '/sensors/camera_0/color/image/compressedDepth'),
+        ('color/image_undistorted/ffmpeg', '/sensors/camera_0/color/image/ffmpeg'),
+        ('color/image_undistorted/theora', '/sensors/camera_0/color/image/theora'),
+        ('color/image_undistorted/zstd', '/sensors/camera_0/color/image/zstd'),
+        # Depth
+        ('depth/image_raw', '/sensors/camera_0/depth/image'),
+        ('depth/image_raw/compressed', '/sensors/camera_0/depth/compressed'),
+        ('depth/image_raw/compressedDepth',
+            '/sensors/camera_0/depth/compressedDepth'),
+        ('depth/image_raw/theora', '/sensors/camera_0/depth/theora'),
+        # Points
+        ('depth/points', '/sensors/camera_0/points')
+    ]
+
     def create_node_action(context, args):
         params = get_params(context, args)
         return [
@@ -190,26 +212,7 @@ def generate_launch_description():
                         name='camera_0',
                         namespace='sensors/camera_0',
                         parameters=params,
-                        remappings=[    
-                            # Color image raw
-                            ('color/camera_info', '/sensors/camera_0/color/camera_info_raw'),
-                            # Color image rectified
-                            ('/sensors/camera_0/color/camera_info_undistorted', '/sensors/camera_0/color/camera_info'),
-                            ('color/image_undistorted', '/sensors/camera_0/color/image'),
-                            ('color/image_undistorted/compressed', '/sensors/camera_0/color/image/compressed'),
-                            ('color/image_undistorted/compressedDepth', '/sensors/camera_0/color/image/compressedDepth'),
-                            ('color/image_undistorted/ffmpeg', '/sensors/camera_0/color/image/ffmpeg'),
-                            ('color/image_undistorted/theora', '/sensors/camera_0/color/image/theora'),
-                            ('color/image_undistorted/zstd', '/sensors/camera_0/color/image/zstd'),
-                            # Depth
-                            ('depth/image_raw', '/sensors/camera_0/depth/image'),
-                            ('depth/image_raw/compressed', '/sensors/camera_0/depth/compressed'),
-                            ('depth/image_raw/compressedDepth',
-                                '/sensors/camera_0/depth/compressedDepth'),
-                            ('depth/image_raw/theora', '/sensors/camera_0/depth/theora'),
-                            # Points
-                            ('depth/points', '/sensors/camera_0/points')
-                        ]
+                        remappings=remappings
                     ),
                 ],
                 output='screen',
