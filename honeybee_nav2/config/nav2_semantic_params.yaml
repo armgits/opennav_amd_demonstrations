@@ -194,7 +194,7 @@ local_costmap:
           use_cost_selection: True  # If true, select observation per tile using highest max_cost in case multile observations fall in a single tile on one image. If false, use highest confidence
           max_obstacle_distance: 3.5
           min_obstacle_distance: 0.3
-          tile_map_decay_time: 5.0
+          tile_map_decay_time: 1.5
           class_types: ["traversable", "danger"]
           traversable:
             classes: ["floor"]
@@ -284,7 +284,7 @@ global_costmap:
           use_cost_selection: True  # If true, select observation per tile using highest max_cost in case multile observations fall in a single tile on one image. If false, use highest confidence
           max_obstacle_distance: 3.5
           min_obstacle_distance: 0.3
-          tile_map_decay_time: 10.0
+          tile_map_decay_time: 3.0
           class_types: ["traversable", "danger"]
           traversable:
             classes: ["floor"]
