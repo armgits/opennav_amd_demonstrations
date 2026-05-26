@@ -123,7 +123,7 @@ def generate_launch_description():
         DeclareLaunchArgument('use_hardware_time', default_value='false'),
         DeclareLaunchArgument('enable_depth_scale', default_value='true'),
         DeclareLaunchArgument('enable_decimation_filter', default_value='True'),
-        DeclareLaunchArgument('pointcloud_decimation_filter_factor', default_value='4'),
+        DeclareLaunchArgument('pointcloud_decimation_filter_factor', default_value='2'),
         DeclareLaunchArgument('enable_hdr_merge', default_value='false'),
         DeclareLaunchArgument('enable_sequence_id_filter', default_value='false'),
         DeclareLaunchArgument('enable_threshold_filter', default_value='false'),
