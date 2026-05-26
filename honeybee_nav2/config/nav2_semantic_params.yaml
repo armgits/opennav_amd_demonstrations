@@ -195,7 +195,7 @@ local_costmap:
           max_obstacle_distance: 3.5
           min_obstacle_distance: 0.3
           tile_map_decay_time: 1.5
-          class_types: ["traversable", "danger"]
+          class_types: ["traversable", "avoid"]
           traversable:
             classes: ["floor"]
             base_cost: 15              # Cost when a single observation is received
@@ -203,10 +203,10 @@ local_costmap:
             mark_confidence: 0        # Average confidence threshold to apply max_cost
             samples_to_max_cost: 0    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
-          danger:
-            classes: ["person"]
-            base_cost: 200            # Cost when a single observation is received
-            max_cost: 254             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
+          avoid:
+            classes: ["wall"]
+            base_cost: 150            # Cost when a single observation is received
+            max_cost: 200             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
             samples_to_max_cost: 0    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
@@ -285,7 +285,7 @@ global_costmap:
           max_obstacle_distance: 3.5
           min_obstacle_distance: 0.3
           tile_map_decay_time: 3.0
-          class_types: ["traversable", "danger"]
+          class_types: ["traversable", "avoid"]
           traversable:
             classes: ["floor"]
             base_cost: 15              # Cost when a single observation is received
@@ -293,22 +293,8 @@ global_costmap:
             mark_confidence: 0        # Average confidence threshold to apply max_cost
             samples_to_max_cost: 0    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
-          danger:
-            classes: ["person"]
-            base_cost: 200            # Cost when a single observation is received
-            max_cost: 254             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
-            mark_confidence: 0        # Average confidence threshold to apply max_cost
-            samples_to_max_cost: 0    # Number of observations needed to apply max_cost
-            dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
-          danger6:
-            classes: ["chair"]
-            base_cost: 120            # Cost when a single observation is received
-            max_cost: 175             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
-            mark_confidence: 0        # Average confidence threshold to apply max_cost
-            samples_to_max_cost: 0    # Number of observations needed to apply max_cost
-            dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
-          danger7:
-            classes: ["table"]
+          avoid:
+            classes: ["wall"]
             base_cost: 150            # Cost when a single observation is received
             max_cost: 200             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
