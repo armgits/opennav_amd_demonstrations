@@ -85,7 +85,7 @@ def generate_launch_description():
     declare_params_file_cmd = DeclareLaunchArgument(
         'params_file',
         default_value=os.path.join(honeybee_nav_dir, 'config', 'nav2_indoor_params.yaml'),
-        description='Full path to the ROS2 parameters file to use for all launched nodes',
+        description='Name of the params file in config folder to use for all launched nodes',
     )
 
     declare_localization_type_cmd = DeclareLaunchArgument(
