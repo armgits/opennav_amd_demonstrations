@@ -201,14 +201,14 @@ local_costmap:
             base_cost: 15              # Cost when a single observation is received
             max_cost: 30               # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
-            samples_to_max_cost: 0    # Number of observations needed to apply max_cost
+            samples_to_max_cost: 20    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
           avoid:
             classes: ["wall"]
             base_cost: 150            # Cost when a single observation is received
             max_cost: 200             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
-            samples_to_max_cost: 0    # Number of observations needed to apply max_cost
+            samples_to_max_cost: 20    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
       always_send_full_costmap: True
 
@@ -291,14 +291,14 @@ global_costmap:
             base_cost: 15              # Cost when a single observation is received
             max_cost: 30               # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
-            samples_to_max_cost: 0    # Number of observations needed to apply max_cost
+            samples_to_max_cost: 20    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
           avoid:
             classes: ["wall"]
             base_cost: 150            # Cost when a single observation is received
             max_cost: 200             # Cost when samples_to_max_cost observations with mark_confidence are accumulated
             mark_confidence: 0        # Average confidence threshold to apply max_cost
-            samples_to_max_cost: 0    # Number of observations needed to apply max_cost
+            samples_to_max_cost: 20    # Number of observations needed to apply max_cost
             dominant_priority: False  # If true, this class immediately becomes dominant and clears all other class queues from the tile
       always_send_full_costmap: True
 
